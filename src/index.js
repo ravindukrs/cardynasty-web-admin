@@ -1,0 +1,18 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+import * as serviceWorker from './serviceWorker';
+import App from './App';
+import Firebase, { FirebaseContext } from './config/Firebase';
+import 'react-dual-listbox/lib/react-dual-listbox.css';
+
+
+ReactDOM.render(
+    <FirebaseContext.Provider value={new Firebase()}>
+        <App />
+    </FirebaseContext.Provider>
+    ,
+    document.getElementById('root')
+);
+
+serviceWorker.unregister();
