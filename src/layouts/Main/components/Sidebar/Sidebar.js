@@ -85,11 +85,11 @@ const Sidebar = props => {
       href: '/settings',
       icon: <SettingsIcon />
     },
-    {
-      title: 'Reports',
-      href: '/reports',
-      icon: <TextFieldsIcon />
-    },
+    // {
+    //   title: 'Reports',
+    //   href: '/reports',
+    //   icon: <TextFieldsIcon />
+    // },
     // {
     //   title: 'Envelope',
     //   href: '/envelope',

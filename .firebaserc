@@ -1,5 +1,5 @@
 {
   "projects": {
-    "unitypac-carrier": "unitypac-carrier"
+    "default": "unitypac-carrier"
   }
 }

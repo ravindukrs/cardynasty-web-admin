@@ -41,6 +41,7 @@ class Firebase {
     createNewUser = (userData, otherData) => {
         this.db.collection('users').doc(`${userData.user.uid}`).set(
             {
+                uid:userData.user.uid,
                 userType: "Admin",
                 ...otherData
             }
