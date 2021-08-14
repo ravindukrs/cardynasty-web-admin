@@ -129,14 +129,14 @@ const LatestSales = props => {
       className={clsx(classes.root, className)}
     >
       <CardHeader
-        action={
-          <Button
-            size="small"
-            variant="text"
-          >
-            Last 7 days <ArrowDropDownIcon />
-          </Button>
-        }
+        // action={
+        //   <Button
+        //     size="small"
+        //     variant="text"
+        //   >
+        //     Last 7 days <ArrowDropDownIcon />
+        //   </Button>
+        // }
         title="Latest Orders this Week"
       />
       <Divider />
@@ -150,13 +150,13 @@ const LatestSales = props => {
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <Button
+        {/* <Button
           color="primary"
           size="small"
           variant="text"
         >
           Overview <ArrowRightIcon />
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );

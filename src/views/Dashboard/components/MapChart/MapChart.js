@@ -95,14 +95,14 @@ const MapChart = (props) => {
             className={clsx(classes.root, className)}
         >
             <CardHeader
-                action={
-                    <Button
-                        size="small"
-                        variant="text"
-                    >
-                        Last 7 days <ArrowDropDownIcon />
-                    </Button>
-                }
+                // action={
+                //     <Button
+                //         size="small"
+                //         variant="text"
+                //     >
+                //         Last 7 days <ArrowDropDownIcon />
+                //     </Button>
+                // }
                 title="Mechanic Distribution"
             />
             <Divider />

@@ -6,7 +6,6 @@ import { Main as MainLayout, Minimal as MinimalLayout } from './layouts';
 
 import {
   Dashboard as DashboardView,
-  ProductList as ProductListView,
   UserList as UserListView,
   Typography as TypographyView,
   Icons as IconsView,
@@ -15,8 +14,6 @@ import {
   SignUp as SignUpView,
   SignIn as SignInView,
   NotFound as NotFoundView,
-  Reports as ReportView,
-  Envelope as EnvelopeView
 } from './views';
 import { FirebaseContext } from '../src/config/Firebase';
 
@@ -69,12 +66,6 @@ const Routes = () => {
           path="/users"
         />
         <RouteWithLayout
-          component={ProductListView}
-          exact
-          layout={MainLayout}
-          path="/products"
-        />
-        <RouteWithLayout
           component={TypographyView}
           exact
           layout={MainLayout}
@@ -93,22 +84,10 @@ const Routes = () => {
           path="/account"
         />
         <RouteWithLayout
-          component={EnvelopeView}
-          exact
-          layout={MainLayout}
-          path="/envelope"
-        />
-        <RouteWithLayout
           component={SettingsView}
           exact
           layout={MainLayout}
           path="/settings"
-        />
-        <RouteWithLayout
-          component={ReportView}
-          exact
-          layout={MainLayout}
-          path="/reports"
         />
         <RouteWithLayout
           component={NotFoundView}

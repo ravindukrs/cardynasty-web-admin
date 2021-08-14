@@ -64,6 +64,17 @@ const LatestOrders = props => {
   const classes = useStyles();
 
   const [reportSales, setReportSales] = useState(null);
+  const [exchangeRate, setExchangeRate] = useState(null);
+
+  useEffect(() => {
+    (async () => {
+
+      fetch("https://v6.exchangerate-api.com/v6/7de3db137ed2bd8f9ca247ac/latest/USD")
+      .then(response => response.json())
+      .then(data => setExchangeRate(data.conversion_rates.LKR));
+
+    })()
+  }, [])
 
   useEffect(() => {
     (async () => {
@@ -92,16 +103,16 @@ const LatestOrders = props => {
       className={clsx(classes.root, className)}
     >
       <CardHeader
-        action={
-          <Button
-            color="primary"
-            size="small"
-            variant="outlined"
-          >
-            New entry
-          </Button>
-        }
-        title="Latest Report Views"
+        // action={
+        //   <Button
+        //     color="primary"
+        //     size="small"
+        //     variant="outlined"
+        //   >
+        //     New entry
+        //   </Button>
+        // }
+        title="Latest Report Sales"
       />
       <Divider />
       <CardContent className={classes.content}>
@@ -129,7 +140,7 @@ const LatestOrders = props => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {reportSales && reportSales.map(sale => (
+                {exchangeRate && reportSales && reportSales.map(sale => (
                   <TableRow
                     hover
                     key={sale.id}
@@ -142,7 +153,7 @@ const LatestOrders = props => {
                       {sale.vehicleReg}
                     </TableCell>
                     <TableCell>
-                      $ {sale.paymentUSD}
+                      $ {sale.paymentUSD} (LKR {Math.round(sale.paymentUSD*exchangeRate*100 + Number.EPSILON)/100})
                     </TableCell>
                   </TableRow>
                 ))}
@@ -153,13 +164,13 @@ const LatestOrders = props => {
       </CardContent>
       <Divider />
       <CardActions className={classes.actions}>
-        <Button
+        {/* <Button
           color="primary"
           size="small"
           variant="text"
         >
           View all <ArrowRightIcon />
-        </Button>
+        </Button> */}
       </CardActions>
     </Card>
   );
