@@ -104,7 +104,7 @@ const TotalProfit = props => {
   useEffect(() => {
     (async () => {
         try {
-          expense&&revenue? setProfit(revenue-expense) : 0;
+//           expense&&revenue? setProfit(revenue-expense) : 0;
         } catch (error) {
             console.log(error);
         }
