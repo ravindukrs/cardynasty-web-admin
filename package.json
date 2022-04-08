@@ -8,7 +8,7 @@
   "scripts": {
     "start": "CI=false DISABLE_ESLINT_PLUGIN=true react-scripts start",
     "build": "CI=false DISABLE_ESLINT_PLUGIN=true react-scripts build",
-    "test": "CI=false DISABLE_ESLINT_PLUGIN=true react-scripts test",
+    "test": "CI=false DISABLE_ESLINT_PLUGIN=true react-scripts test --passWithNoTests",
     "eject": "CI=false DISABLE_ESLINT_PLUGIN=true react-scripts eject"
   },
   "eslintConfig": {
